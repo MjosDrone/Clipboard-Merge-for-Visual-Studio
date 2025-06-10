@@ -34,7 +34,7 @@ This makes it difficult to see exactly what changed. This extension streamlines 
 
 All settings can be configured in Visual Studio via **Tools > Options > External Merge**.
 
-![Options Screenshot](https://github.com/alexis-/Clipboard-Merge-for-Visual-Studio-Code/docs/vs-options.png)
+![Options Screenshot](https://github.com/alexis-/Clipboard-Merge-for-Visual-Studio/blob/main/docs/vs-options.png?raw=true)
 
 
 ### 1. Tool Path
