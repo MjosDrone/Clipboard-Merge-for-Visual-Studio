@@ -56,7 +56,7 @@
         <Parent guid="guidExternalMergeVSExtensionPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Invoke MergeWithClipboardCommand2</ButtonText>
+          <ButtonText>Merge with Clipboard...</ButtonText>
         </Strings>
       </Button>
     </Buttons>

@@ -71,14 +71,14 @@
     /// <param name="package">Owner package, not null.</param>
     public static async Task InitializeAsync(AsyncPackage package)
     {
-      // Switch to the main thread - the call to AddCommand in MergeWithClipboardCommand2's constructor requires
+      // Switch to the main thread - the call to AddCommand in MergeWithClipboardCommand's constructor requires
       // the UI thread.
       await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
       var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
       var dte            = await package.GetServiceAsync(typeof(DTE)) as DTE2;
 
-      _ = new MergeWithClipboardCommand(package, commandService, dte);
+      Instance = new MergeWithClipboardCommand(package, commandService, dte);
     }
 
     /// <summary>
@@ -130,6 +130,13 @@
             return;
           }
 
+          // FIX: Check if the tool executable exists before proceeding. This provides a much clearer error.
+          if (!File.Exists(toolPath))
+          {
+            ShowMessageBox("Error", $"The configured external merge tool was not found.\n\nPlease check the path in Tools > Options > External Merge.\n\nPath: {toolPath}");
+            return;
+          }
+
           // --- Start of I/O and Process logic, can be on a background thread ---
 
           string tempDir         = Path.GetTempPath();
@@ -162,10 +169,14 @@
             UseShellExecute = false
           };
 
+          // IMPROVEMENT: Run the entire process lifecycle on a background thread to avoid blocking the UI.
           using (Process process = new Process { StartInfo = startInfo })
           {
-            process.Start();
-            await Task.Run(() => process.WaitForExit()); // Correctly wait on a background thread
+            await Task.Run(() =>
+            {
+              process.Start();
+              process.WaitForExit();
+            });
           }
 
           // BEST PRACTICE: Read file on a background thread.
