@@ -1,4 +1,4 @@
-﻿namespace ExternalMerge.VSExtension
+﻿namespace ClipboardMergeForVisualStudio
 {
   using System;
   using System.Runtime.InteropServices;
@@ -30,7 +30,7 @@
   {
     #region Constants & Statics
 
-    /// <summary>ExternalMerge.VSExtensionPackage GUID string.</summary>
+    /// <summary>ClipboardMergeForVisualStudioPackage GUID string.</summary>
     public const string PackageGuidString = "09ef1551-8bb2-463d-8fae-5ad58dd9616a";
 
     #endregion

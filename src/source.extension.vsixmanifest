@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="ExternalMerge.VSExtension.c31d8a5b-68a8-4dfa-896f-acb6f1aa2713" Version="1.0.6" Language="en-US" Publisher="MjosDrone" />
+        <Identity Id="ClipboardMergeForVisualStudio.c31d8a5b-68a8-4dfa-896f-acb6f1aa2713" Version="1.0.7" Language="en-US" Publisher="MjosDrone" />
 
         <!-- This is the name that appears in the "Extensions and Updates" dialog. -->
-        <DisplayName>External Clipboard Merge</DisplayName>
+        <DisplayName>External Clipboard Merge for Visual Studio</DisplayName>
 
         <!-- A brief description of your extension. -->
         <Description xml:space="preserve">Opens an external merge tool to compare the active editor content with the clipboard content. This makes it easy to review and integrate new changes made by AI Code Assistants. Configure your merge tool path under Tools &gt; Options.</Description>
@@ -25,7 +25,13 @@
         <Tags>diff, merge, compare, external, tool, clipboard, code review, AI</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 18.0)">
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>

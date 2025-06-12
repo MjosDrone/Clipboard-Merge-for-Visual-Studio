@@ -1,4 +1,4 @@
-﻿namespace ExternalMerge.VSExtension
+﻿namespace ClipboardMergeForVisualStudio
 {
   using System;
   using System.ComponentModel.Design;
