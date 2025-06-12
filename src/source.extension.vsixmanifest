@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="ClipboardMergeForVisualStudio.c31d8a5b-68a8-4dfa-896f-acb6f1aa2713" Version="1.0.7" Language="en-US" Publisher="MjosDrone" />
+        <Identity Id="ClipboardMergeForVisualStudio.c31d8a5b-68a8-4dfa-896f-acb6f1aa2713" Version="1.0.8" Language="en-US" Publisher="MjosDrone" />
 
         <!-- This is the name that appears in the "Extensions and Updates" dialog. -->
         <DisplayName>External Clipboard Merge for Visual Studio</DisplayName>
